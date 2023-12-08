@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="container">
+        <h1>Wassup </h1>
+    </div>
+    <script lang="js">
+
+        // const style = document.createElement("style");
+        // document.head.appendChild(style);
+
+
+        // function generateClassname(styles) {
+        //     const index = style.sheet.cssRules.length;
+        //     const code = `rex-${Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000}`
+        //     style.sheet.addRule(` .${code} { ${styles} } `, index)
+
+        //     return code
+        // }
+
+        let container = document.getElementById('container')
+
+
+        const style = document.createElement("style");
+        document.head.appendChild(style);
+
+        // const h1Styles = generateClassname('color : red ')
+
+        function css(styles) {
+            const index = style.sheet.cssRules.length;
+            const className = `css-${index}`;
+            const rule = `.${className} { ${styles} }`;
+            style.sheet.insertRule(rule, index);
+            return className;
+        }
+
+        // console.log(css("color : white"))
+        container.classList.add(css('font-family: sans-serif'))
+        container.classList.add(css('color: red'))
+    </script>
+</body>
+
+</html>
